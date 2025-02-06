@@ -1,0 +1,163 @@
+ 
+   {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    } 
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5e4d6;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin:  auto;
+      padding: 20px;
+    }
+
+    /* Header Styling */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+
+    .hero-text {
+      max-width: 400px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero-text p {
+      margin: 20px 0;
+      font-size: 20px;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 7px;
+      margin: right 10px 20px;
+  
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+  
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      color: #333;
+    }
+  html{
+    scroll-behavior: smooth;
+  }
+ #about{
+
+text-align:center;
+background-color: rgba(0, 0, 0, 0.318);
+ }
+ 
+ nav a:first-child:hover,a:last-child:hover {
+    
+    
+    background-color: black;
+    color: darksalmon;
+    padding: 10px;
+  }
+  nav a.str:hover{
+    background-color: black;
+    color: darksalmon;
+    padding: 10px;
+  }
+  .sc{
+    font-size:xx-large;
+    font-weight: bold;
+    font-family:cursive;
+  }
+  
+  /* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Menu (Hidden by Default) */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    
+    background: white;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    width: 150px;
+  }
+  
+  /* Show Dropdown on Hover */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Dropdown Items */
+  .dropdown-menu li {
+    padding: 10px;
+  }
+  
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+  
+  .dropdown-menu li:hover {
+    background: #f0f0f0;
+  }
+  a.log:hover {
+    background-color: black;
+    color: darksalmon;
+    padding: 10px;
+  }
