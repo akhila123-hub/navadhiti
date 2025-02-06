@@ -1,0 +1,25 @@
+#stud-form{
+    box-sizing: border-box;
+    padding:20px;
+    display: none;
+  
+}
+h2{
+ 
+  color: rgb(16, 17, 17);
+    background-color: cadetblue;
+}
+#student-result,#marks-result {
+    background-color: rgb(136, 212, 237);
+    color: black;
+}
+#mark-form{
+padding: 20px;
+box-sizing: border-box;
+
+display: none;
+
+}
+
+
+

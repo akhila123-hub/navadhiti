@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Student and Marks Record</title>
+    <link rel="stylesheet"  href="form.css" />
+    
+</head>
+<body>
+
+  <script src=form.js></script>
+ <div class=tabs>
+ <button onclick="dis1()">Student form</button>
+ <button onclick="dis2()">Mark form</button>
+ 
+ </div>
+
+    <form id=stud-form> 
+        <h2>Student Record Form</h2>
+        
+            <label for="student-name">Name:</label>
+            <input type="text"  id="student-name" required><br><br>
+
+            <label for="student-email">Email:</label>
+            <input type="email" id="student-email" required><br><br>
+
+             <label for="student-dob">dob:</label>
+            <input type="date" id="student-dob" required><br><br>
+            <button onclick="display(event)">Submit</button>
+            <button type="reset">Reset</button>
+            
+        </form>
+        <div id="student-result"></div>
+    </div>
+
+       
+      
+        <form id=mark-form>
+        <h2>Marks Record Form</h2>
+            <label for="marks-tamil">Tamil:</label>
+            <input type="number" id="marks-tamil"  ><br><br>
+
+            <label for="marks-english">English:</label>
+            <input type="number" id="marks-english"  required><br><br>
+
+            <label for="marks-maths">Maths:</label>
+            <input type="number" id="marks-maths"  required><br><br>
+
+            <label for="marks-science">Science:</label>
+            <input type="number" id="marks-science"  required><br><br>
+
+            <label for="marks-social">Social:</label>
+            <input type="number" id="marks-social"  required><br><br>
+
+            <button onclick="displayMark(event)">Submit</button>
+            <button type="reset">reset</button>
+        </form>
+        <div id="marks-result" class="result"></div>
+</div>
+</body>
+</html>
