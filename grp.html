@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorted Users</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+
+    <h1>grp Users by Total Order Amount</h1>
+    <table id="grpUser">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Age</th>
+               
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    
+        <script>
+    const users = [
+        { "userId": 1, "name": "Alice", "age": 25 },
+        { "userId": 2, "name": "Bob", "age": 30 },
+        { "userId": 3, "name": "Charlie", "age": 25 },
+         { "userId": 4, "name": "aki", "age": 30 }
+    ];
+
+    const groupedUsers = users.reduce((res, user) => {
+        res[user.age] = res[user.age] || [];  
+        res[user.age].push(user);  
+        return res;
+    }, {});
+
+    const tableBody = document.querySelector("#grpUser tbody");
+
+    Object.values(groupedUsers).flat().forEach(user => {
+        tableBody.innerHTML += `<tr>
+            <td>${user.userId}</td>
+            <td>${user.name}</td>
+            <td>${user.age}</td>
+        </tr>`;
+    });
+</script>
+
+    
+
+</body>
+</html>
+

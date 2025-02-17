@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            width:100%;
+            margin:50px;
+        
+            
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+            background-color:#d3d3d3;
+            
+        }
+        th {
+            background-color:rgba(79, 137, 237, 0.6);
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Full User Data</h2>
+    <table id="fullTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Zip Code</th>
+                <th>Orders</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Extracted User Info</h2>
+    <table id="extractedTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Total Orders</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <h2>Extracted User Info1</h2>
+    <table id="extractedTable1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>zip</th>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <h2>orders</h2>
+    <table id="orderLess">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>order</th>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const myData = {
+            
+            data: {
+                users: [
+                   {"id":1,"name":"sow","address":{"city":"cbe","zip":"10001"},"orders":[10,12,15]},
+                   {"id":2,"name":"sindhu","address":{"city":"annur","zip":"641005"},"orders":[18,22,17,57]},
+                   {"id":3,"name":"aki","address":{"city":"Coimbatore","zip":"90001"},"orders":[18]},
+                   {"id":4,"name":"karthu","address":{"city":"cbe","zip":"90002"},"orders":[18,22]},
+                   {"id":5,"name":"riya","address":{"city":"mtp","zip":"90009"},"orders":[14,26,30,39,46,47,48]}
+
+                ]
+            }
+        };
+
+
+        const fullTableBody = document.querySelector("#fullTable tbody");
+       
+        
+
+      //full data
+        myData.data.users.forEach(user => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.address.city}</td>
+                <td>${user.address.zip}</td>
+                <td>${user.orders.join(", ")}</td>
+            `;
+            fullTableBody.appendChild(row);
+        });
+//---------------------------------------------------------------------------------------------------------------------------
+        //next
+        const extractedTableBody = document.querySelector("#extractedTable tbody");`    `
+        const extractedInfo = myData.data.users.map(user => ({
+            name: user.name,
+            city: user.address.city,
+            totalOrders: user.orders.length
+        }));
+
+       
+        extractedInfo.forEach(user => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${user.name}</td>
+                <td>${user.city}</td>
+                <td>${user.totalOrders}</td>
+            `;
+            extractedTableBody.appendChild(row);
+        });
+//next----------------------------------------------------------------------------------
+        const extractedTableBody1 = document.querySelector("#extractedTable1 tbody");
+        const address = myData.data.users.map(person =>({
+            city:person.address.city,
+            zip:person.address.zip
+        }));
+        console.log(address);
+        address.forEach(person => {
+            const row1 = document.createElement("tr");
+            row1.innerHTML = `
+               
+                <td>${person.city}</td>
+                <td>${person.zip}</td>
+                
+            `;
+            extractedTableBody1.appendChild(row1);
+        });
+        // order<3 table
+         const orderLessThan3 = document.querySelector("#orderLess");
+        
+         const filtered = myData.data.users.filter(user => user.orders.length < 3); 
+             console.log("Filtered Users:", filtered);
+  const lessOrder= filtered.map(user => ({
+    name: user.name,
+    totalOrders: user.orders.length
+   
+  }));
+        console.log("Less Order:", lessOrder);
+        lessOrder.forEach(person => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+               
+                <td>${person.name}</td>
+                <td>${person.totalOrders}</td>
+                
+            `;
+            orderLessThan3.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>
